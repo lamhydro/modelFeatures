@@ -1,6 +1,7 @@
 \documentclass{beamer}
 
 \usepackage{graphicx}
+\usepackage{courier}
 
 \title{New features for SHOP}
 \subtitle{Luis Morales, Dorothy Dunford}
@@ -36,20 +37,41 @@ The model has two big components:
 \end{itemize}
 \end{frame}
 
-
-\begin{frame}{Maestro's model structure}
-
-
+%-----------
+\begin{frame}[allowframebreaks]{Maestro's model structure}
 \begin{figure}
 \includegraphics[scale=0.5]{800px-Flow.png}
 \end{figure}
 
 \framebreak
 
-Main Maestro's modules
+Main Maestro's modules under \texttt{/shop} (root module)
 \begin{itemize}
-\item :
+\item \texttt{/PrepareData}:
+\begin{itemize}
+\item \texttt{CreateDatabaseObs}
+\item \texttt{CreateDatabaseMod} 
+\item \texttt{SolutionInterpolator} 
 \end{itemize}
+\item \texttt{/UpdateMNT}: 
+\begin{itemize}
+\item \texttt{GenManning} 
+\item \texttt{Genice}
+\item \texttt{GenWinds} 
+\end{itemize}
+
+\item \texttt{/Analysis} 
+\item \texttt{/Forecast} 
+\end{itemize}
+both \texttt{/Analysis} and \texttt{/Forecast} include this module \texttt{/RunH2D2} and these tasks:\texttt{LoopHour[]} \texttt{CreateInp} \texttt{RunMod} \texttt{CreateOutputs}
+
+Other tasks include: \texttt{CreateProducts} \texttt{CleanSuite}
 \end{frame}
+%-----------
+
+
+%-----------
+
+%-----------
 
 \end{document}
